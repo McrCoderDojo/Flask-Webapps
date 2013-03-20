@@ -1,0 +1,15 @@
+{% extends 'template9.html' %}
+{% block title %}Look! People!{% endblock %}
+{% block content %}
+        <form method="post">
+            <p>Name: <input type="text" name="name" /></p>
+            <p>Age: <input type="number" min="0" max="120" name="age"></p>
+            <p><input type="submit"></p>
+        </form>
+        <hr />
+        <ul>
+            {% for person in people %}
+                <li><a href="{{ url_for('person', id=person.id) }}">{{ person.name }}</a></li>
+            {% endfor %}
+        </ul>
+{% endblock %}

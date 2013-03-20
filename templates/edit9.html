@@ -1,0 +1,12 @@
+{% extends 'template9.html' %}
+{% block title %}Look! An Editable Person!{% endblock %}
+{% block content %}
+    <form method="post">
+        <p>Name: <input type="text" name="name" value="{{ person.name }}" /></p>
+        <p>Age: <input type="number" name="age" min="0" max="120" value="{{ person.age }}" /></p>
+        <p><input type="submit" /></p>
+    </form>
+    <hr />
+    <p><a href="{{ url_for('person', id=person.id) }}">View this Person</a></p>
+    <p><a href="{{ url_for('index') }}">Go Home</a></p>
+{% endblock %}
